@@ -8,11 +8,11 @@ import java.io.PrintWriter;
 @WebServlet("/UrlRewritingServlet")
 public class UrlRewritingServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
-        resp.setContentType("text/HTML");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
+        resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.print("<a href='UrlRewritingServletBye?uname='"+req.getParameter("uname")+"&?city="+req.getParameter("city") +
-                ">Forward url Rewriting</a>");
+        out.println("<a href='UrlRewritingServletBye?uname="+req.getParameter("uname")+"&city="+req.getParameter("city") +
+                "> Forward url Rewriting </a>");
 
     }
 }
