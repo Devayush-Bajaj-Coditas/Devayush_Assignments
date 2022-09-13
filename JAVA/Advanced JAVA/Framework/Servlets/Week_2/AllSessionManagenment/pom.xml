@@ -24,6 +24,10 @@
   <packaging>war</packaging>
 
   <name>AllSessionManagenment</name>
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
   <groupId>org.example</groupId>
   <artifactId>AllSessionManagenment</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -49,6 +53,12 @@
   </build>
 
   <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
     <!--dependency>
       <groupId>org.example</groupId>
       <artifactId>[the artifact id of the block to be mounted]</artifactId>
