@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+        width: 40%;
+        border: 4px solid black
+
+        }
+
+    </style>
+</head>
+<body>
+<div class = "container" align="center">
+    <form action="RegisterServlet" method="post">
+<table align="center">
+    <tr><td>Name </td> <td> <input type ="text" name = "user_name"></td></tr>
+    <tr><td>Password</td><td><input type="password" name ="user_password"></td></tr>
+    <tr><td>emil</td><td><input type="email" name ="user_email"></td></tr>
+    <tr><td>Gender</td><td><input type="password" name ="user_password"></td></tr>
+    <tr><td>Password</td><td><input type="radio" name ="user_gender" value="Male">Male &nbsp; &nbsp; <input type="radio" name ="gender" value="Female">Female</td></tr>
+    <tr><td>Select your course</td><td><select name = "user_Course">
+        <option value="Java">Java</option>
+        <option value="php">Php</option>
+        <option value="Python">Python</option>
+        <option value = "Android">Android</option>
+    </select></td></tr>
+
+    <tr><td></td><td><input type="checkbox" value="Checked" name="condition"> Agree terms and conditions </td></tr>
+    <td><td><input type="Submit" value="Sign-up">
+    <input type="reset" value="Reset"></td></tr>
+
+</table>
+    </form>
+</div>
+</body>
+</html>
