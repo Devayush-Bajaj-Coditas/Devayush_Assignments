@@ -18,7 +18,8 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("webapp/RegisterJSP.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/RegisterJSP.jsp");
+        requestDispatcher.forward(req,resp);
     }
 
     @Override
@@ -44,7 +45,7 @@ public class EmployeeServlet extends HttpServlet {
 
         employeeDao.registerEmployee(employee);
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("EmployeeDetails.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/views/EmployeeDetail.jsp");
         requestDispatcher.forward(req,resp);
 
     }

@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Random;
 
 public class EmployeeDao {
 
@@ -19,12 +18,10 @@ public class EmployeeDao {
         }
 
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Employee", "root", "12345");
-            PreparedStatement preparedStatement = con.prepareStatement("Insert into JSP_Employees " +
-                    "(id,firstname,lastname,username,password,address,contact) " +
-                    "Values (?,?,?,?,?,?,?)");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/restfirstproject", "root", "12345");
+            PreparedStatement preparedStatement = con.prepareStatement("Insert into employee Values (?,?,?,?,?,?,?)");
 
-            preparedStatement.setInt(1,employee.getId() );
+            preparedStatement.setInt(1,employee.getId());
             preparedStatement.setString(2, employee.getFirstname());
             preparedStatement.setString(3, employee.getLastname());
             preparedStatement.setString(4, employee.getUsername());

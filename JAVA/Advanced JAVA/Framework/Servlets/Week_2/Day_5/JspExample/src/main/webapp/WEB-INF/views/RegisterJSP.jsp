@@ -5,7 +5,7 @@
 <body>
 <table align="center" style="margin : 200px">
 
-<form action="register.jsp">
+<form action="register" method="post">
     <tr><td> First Name </td><td> <input type="text" name = "first_name"> </td></tr>
     <tr><td> Last Name </td><td> <input type="text" name = "last_name"> </td></tr>
     <tr><td> User Name </td><td> <input type="text" name = "userName"> </td></tr>
