@@ -29,10 +29,17 @@ public class DisplayDetails extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        Iterator iterator = list.iterator();
-        while(iterator.hasNext()){
-            out.println(iterator.next()+ "<br>");
+
+
+        out.print("<table border ='1' width = 100%>" +
+                "<tr><th>Name</th><th>Email</th><th>Password</th><th>Mobile</th></tr>");
+
+        for(UserBean bean : list){
+            out.print("<tr><td>" + bean.getUsername() + "</td><td>"+ bean.getEmail() +
+            "</td><td>"+bean.getPassword()+"</td><td>" + bean.getContact() + "</td></tr>");
         }
+        out.print("</table>");
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("AdminHome.html");
         dispatcher.include(req,resp);
     }

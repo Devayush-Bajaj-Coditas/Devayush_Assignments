@@ -16,6 +16,25 @@ public class UserBean {
     String password;
     String email;
     String contact;
+    String updateThis;
+
+    public String getUpdateThis() {
+        return updateThis;
+    }
+
+    public void setUpdateThis(String updateThis) {
+        this.updateThis = updateThis;
+    }
+
+    public String getNewData() {
+        return newData;
+    }
+
+    public void setNewData(String newData) {
+        this.newData = newData;
+    }
+
+    String newData;
 
     public String getUsername() {
         return username;

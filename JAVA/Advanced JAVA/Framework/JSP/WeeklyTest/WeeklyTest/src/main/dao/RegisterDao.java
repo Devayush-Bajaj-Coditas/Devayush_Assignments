@@ -59,4 +59,14 @@ public class RegisterDao {
         int status = preparedStatement.executeUpdate();
         return status;
     }
+
+    public int update(UserBean bean) throws SQLException {
+        getConnection();
+        String updateThis = bean.getUpdateThis();
+        PreparedStatement preparedStatement = con.prepareStatement("update weeklytest set "+ updateThis +" =  ?  where name =  ? ");
+        preparedStatement.setString(1,bean.getNewData());
+        preparedStatement.setString(2,bean.getUsername());
+        int status = preparedStatement.executeUpdate();
+        return status;
+    }
 }
