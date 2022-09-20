@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id = "p1" class = "com.bean.Point">
+    <property name = "x" value ="2"/>
+    <property name = "y" value ="5"/>
+</bean>
+
+<bean id = "p2" class = "com.bean.Point">
+<property name = "x" value ="6"/>
+<property name = "y" value ="7"/>
+</bean>
+
+<bean id = "p3" class = "com.bean.Point">
+<property name = "x" value ="4"/>
+<property name = "y" value ="5"/>
+</bean>
+
+<bean id ="tri" class = "com.bean.Triangle">
+<property name = "pointA" ref = "p1"/>
+<property name = "pointB" ref = "p2"/>
+<property name = "pointC" ref = "p3"/>
+
+</bean>
+</beans>

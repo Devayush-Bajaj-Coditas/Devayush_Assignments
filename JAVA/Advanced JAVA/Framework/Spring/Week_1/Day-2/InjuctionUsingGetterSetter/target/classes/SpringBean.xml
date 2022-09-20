@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="address" class="com.pojo.AddressPojo">
+        <property name="houseNo" value="H39"/>
+        <property name="area" value="Viman Nagar"/>
+        <property name="city" value="Pune"/>
+        <property name="pincode" value="462042"/>
+    </bean>
+
+    <bean id = "student" class="com.pojo.StudentPojo">
+        <property name="name" value="Devayush"/>
+        <property name="branch" value="MCA"/>
+        <property name="enrollmentId" value="0103CA201041"/>
+        <property name="mobile" value="75098"/>
+        <property name="address" ref="address"/>
+
+    </bean>
+
+</beans>

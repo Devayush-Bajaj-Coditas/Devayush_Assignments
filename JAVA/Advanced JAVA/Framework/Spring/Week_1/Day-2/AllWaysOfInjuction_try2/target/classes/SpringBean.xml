@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="address" class="com.pojo.AddressPojo">
+    <constructor-arg value="39"></constructor-arg>>
+    <constructor-arg value="VimanNagar"></constructor-arg>
+    <constructor-arg value="Pune" ></constructor-arg>
+    <constructor-arg value="264032" ></constructor-arg>
+</bean>
+
+    <bean id ="student" class="com.pojo.StudentPojo">
+        <constructor-arg index="0" value="Devayush"/>
+        <constructor-arg index="1" value="MCA"/>
+        <constructor-arg index="2" value="7509810259"/>
+        <constructor-arg index="3" ref="address"/>
+    </bean>
+
+
+</beans>

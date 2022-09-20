@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean class ="com.bean.Address" id = "Address1" >
+        <constructor-arg name="houseName" value="15"/>
+        <constructor-arg name="city" value="bhopal"/>
+        <constructor-arg name="state" value="MP"/>
+    </bean>
+
+<!--    <bean class="com.bean.Student" id ="Student1" autowire="constructor" scope="prototype">-->
+<!--        <constructor-arg name ="sid" value="15"/>-->
+<!--        <constructor-arg name="name" value ="Dev"/>-->
+<!--    </bean>-->
+
+    <bean class="com.bean.Student" id ="Student" autowire="constructor" scope="prototype">
+        <constructor-arg name ="sid" value="15"/>
+        <constructor-arg name="name" value ="Dev"/>
+    </bean>
+
+
+
+</beans>
