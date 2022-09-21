@@ -1,0 +1,38 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean class="Bean.MovieBean" id="rrr">
+        <property name="movieName" value="RRR"/>
+        <property name="movieYear" value="2022"/>
+    </bean>
+
+    <bean class="Bean.MovieBean" id="WorldWarZ">
+        <property name="movieName" value="World War Z"/>
+        <property name="movieYear" value="2017"/>
+    </bean>
+
+    <bean class="Bean.DirectorBean" id="director">
+        <property name="joner">
+            <set>
+                <value>Thrill</value>
+                <value>Horror</value>
+                <value>Comedy</value>
+                <value>Adventure</value>
+            </set>
+        </property>
+        <property name="movie">
+            <map>
+                <entry key-ref="rrr" value="Mohit suri"></entry>
+                <entry key-ref="WorldWarZ" value="RajaRamMohli"></entry>
+            </map>
+
+        </property>
+    </bean>
+
+</beans>
