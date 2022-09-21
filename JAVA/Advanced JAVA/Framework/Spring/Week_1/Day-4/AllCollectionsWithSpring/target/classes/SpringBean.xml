@@ -1,0 +1,44 @@
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:annotation-config></context:annotation-config>
+    <bean class="Bean.AddressBean" id="address">
+        <property name="area" value="viman nager"/>
+        <property name="city" value="Pune"/>
+        <property name="State" value="MH"/>
+    </bean>
+
+    <bean class="Bean.StudentBean" id="devayush">
+        <property name="name" value="Devayush"/>
+        <property name="rollNo" value="15"/>
+    </bean>
+    <bean class="Bean.StudentBean" id="amit">
+        <property name="name" value="Amit"/>
+        <property name="rollNo" value="55"/>
+    </bean>
+
+    <bean class="Bean.TeacherBean" id="teacher">
+        <property name="name" value="Aarti"/>
+        <property name="id" value="27"/>
+        <property name="subjects" >
+            <set>
+                <value>Java</value>
+                <value>C</value>
+                <value>Angular</value>
+            </set>
+        </property>
+        <property name="students">
+            <map>
+                <entry key-ref="devayush" value="Pass"/>
+                <entry key-ref="amit" value="Fail"/>
+            </map>
+        </property>
+    </bean>
+    
+</beans>

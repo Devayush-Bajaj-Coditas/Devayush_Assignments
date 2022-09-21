@@ -13,6 +13,16 @@
         <property name="address" value="Ahmedabad"></property>
 
     </bean>
+    <bean class ="ParticipantsBean" id="p2">
+        <property name="name" value="Amit"></property>
+        <property name="address" value="Bhopal"></property>
+
+    </bean>
+    <bean class ="ParticipantsBean" id="p3">
+        <property name="name" value="Durgesh"></property>
+        <property name="address" value="Amritsar"></property>
+
+    </bean>
 
 <bean class="DID" id ="did">
 <property name="seasonName" value = "Season2">
@@ -27,6 +37,8 @@
     <property name="participants">
         <map>
             <entry key-ref="p1" value="teamRemo"></entry>
+            <entry key-ref="p2" value="Shuzuka"/>
+            <entry key-ref="p3" value="teamRemo"/>
 
         </map>
     </property>

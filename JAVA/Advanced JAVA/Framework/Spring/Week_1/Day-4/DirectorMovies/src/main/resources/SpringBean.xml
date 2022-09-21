@@ -6,7 +6,7 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context.xsd">
 
-
+    <context:annotation-config></context:annotation-config>
     <bean class="Bean.MovieBean" id="rrr">
         <property name="movieName" value="RRR"/>
         <property name="movieYear" value="2022"/>

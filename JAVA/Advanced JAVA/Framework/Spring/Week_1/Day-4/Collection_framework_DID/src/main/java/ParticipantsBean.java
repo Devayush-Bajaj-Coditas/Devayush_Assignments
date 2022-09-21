@@ -2,6 +2,9 @@ public class ParticipantsBean {
     private String Name;
     private String Address;
 
+    public ParticipantsBean() {
+    }
+
     public String getName() {
         return Name;
     }

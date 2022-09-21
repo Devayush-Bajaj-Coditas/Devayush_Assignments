@@ -9,17 +9,15 @@ public class ApplicationLauncher {
         ApplicationContext context =new ClassPathXmlApplicationContext("SpringBean");
         ParticipantsBean participantsBean = (ParticipantsBean)context.getBean("p1");
 
-/*
-        System.out.println("DID Seasonname::"+getSeasonName);
-        List<String> l = getBrandPartners();
+        System.out.println("DID Seasonname::" + new DID().getSeasonName());
+        List<String> l = new DID().getBrandPartners();
         System.out.println("Brand Partners::");
-        for(String v : 1){
+        for(String v : l){
             System.out.println(v);
         }
-        Map<ParticipantsBean,String> m = getParticipantsBean();
-        Map<ParticipantsBean> m = getParticipants();
+        Map<ParticipantsBean,String> m = new DID().getParticipants();
         for(Map.Entry<ParticipantsBean,String> p1:m.entrySet()){
-            for (Map.Entry<ParticipantsBean>)
-        }*/
+            for (Map.Entry<new DID());
+        }
     }
 }
