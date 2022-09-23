@@ -40,5 +40,9 @@ public class EmpDao {
 
     }
 
+    public int Update(EmployeeBean employeeBean){
+        return jt.update("update employee set salary = salary+5000");
+    }
+
 
 }

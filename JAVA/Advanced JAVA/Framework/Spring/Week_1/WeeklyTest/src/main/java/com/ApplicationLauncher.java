@@ -1,5 +1,6 @@
 package com;
 
+import com.Dao.EmpDao;
 import com.controller.DeleteUser;
 import com.controller.RegisterUser;
 import com.model.EmployeeBean;
@@ -22,9 +23,14 @@ public class ApplicationLauncher {
             switch (choice){
                 case 1:
                     new RegisterUser().register();
+                break;
 
+                case 3:
+                    new EmpDao().Update(employeeBean);
+                    break;
                 case 4:
                     new DeleteUser().delete();
+                    break;
             }
 
         }
