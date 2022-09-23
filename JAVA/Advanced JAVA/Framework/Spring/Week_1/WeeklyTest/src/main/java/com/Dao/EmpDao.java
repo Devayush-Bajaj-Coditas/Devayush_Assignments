@@ -35,10 +35,10 @@ public class EmpDao {
     }
 
 
-
     public int Delete (EmployeeBean employeeBean){
-        return  jt.update("delete from employee where id = " + employeeBean.getEmpId());
+        return  jt.update("delete from employee where EmpId = " + employeeBean.getEmpId());
 
     }
+
 
 }
