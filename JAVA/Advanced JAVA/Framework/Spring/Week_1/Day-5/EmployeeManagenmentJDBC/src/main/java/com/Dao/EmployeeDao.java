@@ -50,9 +50,11 @@ public class EmployeeDao {
     public EmployeeBean getEmployeeById(int empId){
         final String QUERY = "select * from employees where id =?";
         RowMapper<EmployeeBean> rowMapper = new RowMapperImpl();
-        EmployeeBean employeeBean = jdbcTemplate.queryForObject(QUERY, rowMapper,empId);
+        EmployeeBean employeeBean = jdbcTemplate.queryForObject(QUERY, rowMapper,   empId);
         return employeeBean;
     }
+
+
 
 
 }
