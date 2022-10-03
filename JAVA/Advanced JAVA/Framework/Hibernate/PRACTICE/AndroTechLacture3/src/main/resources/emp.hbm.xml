@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/orm/hbm">
+    <class name = "mypack.Emp" table="user">
+        <id name = "id">
+        </id>
+        <property name="name"></property>
+        <property name="company"></property>
+    </class>
+
+</hibernate-mapping>
