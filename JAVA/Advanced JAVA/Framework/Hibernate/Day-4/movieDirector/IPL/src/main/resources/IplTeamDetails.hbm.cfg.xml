@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.model.Team_details" table="IPL_TEM_DETAILS">
+        <id name="teamId">
+            <generator class="increment"></generator>
+        </id>
+        <property name="team_name" column="Team_Name"/>
+        <property name="owner_name" column="Owner_name"/>
+
+        <map name="players" cascade="all" table="Joined_Table">
+            <key column="tid"/>
+            <many-to-many column="playerId" class="com.model.Team_details"></many-to-many>
+            <key></key>
+        </map>
+    </class>
+</hibernate-mapping>

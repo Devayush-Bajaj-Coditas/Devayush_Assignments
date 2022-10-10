@@ -38,7 +38,6 @@ public class CheckValidityServlert extends HttpServlet {
             out.println("Balance : " + session.get(SimUser.class,simUser.getBalance()));
             out.println("validity : " + session.get(SimUser.class,simUser.getValidityDays()));
             requestDispatcher.include(req,resp);
-
         }
 
 

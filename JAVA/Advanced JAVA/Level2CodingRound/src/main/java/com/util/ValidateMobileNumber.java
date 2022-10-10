@@ -12,7 +12,7 @@ public class ValidateMobileNumber {
         Session session = new SessionGenerator().getSession();
 
 
-        SimUser simUser = (SimUser) session.get(SimUser.class, 6);
+        SimUser simUser = (SimUser) session.get(SimUser.class, mobileNumber);
         long numberFromDb = simUser.getMobileNumber();
         if (numberFromDb != mobileNumber){
             return false;
