@@ -1,5 +1,7 @@
 package com.Devayush.ZooAPI.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,7 @@ public class Animal {
     String species;
     @ManyToOne()
     @JoinColumn(name = "Zoo_Id")
+    @NotNull
     Zoo zooAssociated;
 
     public Animal() {

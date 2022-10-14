@@ -3,10 +3,17 @@ package com.Devayush.ZooAPI;
 import com.Devayush.ZooAPI.model.Animal;
 import com.Devayush.ZooAPI.model.Zoo;
 import com.Devayush.ZooAPI.repository.ZooRepository;
+import org.hibernate.Criteria;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,11 +22,12 @@ import java.util.*;
 @SpringBootApplication
 public class ZooApiApplication {
 
+	@Autowired
+	EntityManager entityManager;
 	public static void main(String[] args) throws IOException {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		ApplicationContext context = SpringApplication.run(ZooApiApplication.class,args);
 		ZooRepository zooRepository = context.getBean(ZooRepository.class);
-
 
 		//Animal animal = new Animal();
 		Zoo zoo = new Zoo();
@@ -108,6 +116,11 @@ public class ZooApiApplication {
 					}catch (NoSuchElementException noSuchElementException){
 						System.out.println("Invalid Id. Please try again");
 					}
+					break;
+				case 6:
+					System.out.println("Enter the age you want to filter the animals");
+					int age = Integer.parseInt(bufferedReader.readLine());
+					Criteria criteria =
 			}
 		}
 		while (choicee != 0);

@@ -1,0 +1,13 @@
+package com.coditas.JpaCriteriaDemo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class JpaCriteriaDemoApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
