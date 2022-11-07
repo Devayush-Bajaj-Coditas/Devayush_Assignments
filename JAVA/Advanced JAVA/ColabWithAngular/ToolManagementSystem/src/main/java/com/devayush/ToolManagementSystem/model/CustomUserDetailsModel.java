@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
-public class CustomerUserDetailsModel implements UserDetails {
+public class CustomUserDetailsModel implements UserDetails {
     private UserEntity user;
 
-    public CustomerUserDetailsModel(UserEntity user) {
+    public CustomUserDetailsModel(UserEntity user) {
         super();
         this.user = user;
     }

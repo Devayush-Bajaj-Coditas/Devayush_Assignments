@@ -9,7 +9,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
 @Entity
 public class UserEntity {
     @Id

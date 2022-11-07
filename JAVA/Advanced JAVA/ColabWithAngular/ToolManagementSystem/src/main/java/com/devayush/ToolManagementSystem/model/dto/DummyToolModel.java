@@ -1,4 +1,4 @@
-package com.devayush.ToolManagementSystem.model;
+package com.devayush.ToolManagementSystem.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;

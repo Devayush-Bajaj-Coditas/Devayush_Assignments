@@ -5,28 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6df5fd5-3fd4-49bc-936c-01885ef36d9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/model/OrderEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/model/ToolEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/repository/AdminRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/repository/ToolRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/repository/WorkerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/service/ToolService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/service/WorkerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/utils/JpaUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-3/JpaCriteriaDemo/src/main/java/com/coditas/JpaCriteriaDemo/model/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-3/JpaCriteriaDemo/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-3/ZooRestApi/src/main/java/com/coditas/ZooRestApi/controller/AnimalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-3/ZooRestApi/src/main/java/com/coditas/ZooRestApi/model/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-3/ZooRestApi/src/main/java/com/coditas/ZooRestApi/repository/AnimalRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-3/ZooRestApi/src/main/java/com/coditas/ZooRestApi/services/AnimalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/com/Devayush/ZooAPI/ZooApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/com/Devayush/ZooAPI/ZooApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/com/Devayush/ZooAPI/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/com/Devayush/ZooAPI/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/com/Devayush/ZooAPI/model/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/java/com/Devayush/ZooAPI/model/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Specification/JPA/Day-2/ZooAPI/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/config/CoresConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/entity/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/entity/ToolEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/entity/ToolEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../ColabWithAngular/ToolManagementSystem/src/main/java/com/devayush/ToolManagementSystem/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StudentApi/src/main/java/com/StudentApi/StudentApi/service/StudentService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
