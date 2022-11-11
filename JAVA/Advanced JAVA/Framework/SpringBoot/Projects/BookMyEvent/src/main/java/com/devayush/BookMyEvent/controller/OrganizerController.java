@@ -37,7 +37,7 @@ public class OrganizerController {
         }
     }
 
-    @DeleteMapping(name = "/deleteEvent/{eventId}")
+    @DeleteMapping("/deleteEvent/{eventId}")
     public ResponseEntity deleteEvent (@PathVariable int eventId){
         try{
            eventService.deleteEvent(eventId);
@@ -47,7 +47,7 @@ public class OrganizerController {
         }
     }
 
-    @PutMapping(name = "/updateEvent")
+    @PutMapping("/updateEvent")
     public ResponseEntity updateEvent (@RequestBody EventEntity event){
         try{
             return new ResponseEntity(Optional.of(eventService.updateEvent(event)),(HttpStatus.OK));
@@ -56,14 +56,14 @@ public class OrganizerController {
         }
     }
 
-    @GetMapping(name = "/viewAllEvents")
+    @GetMapping(path = "/viewAllEvents")
     public ResponseEntity ViewAllEvents(){
-        return new ResponseEntity(Optional.of(eventService.getAllEvents()),(HttpStatus.OK));
+        return new ResponseEntity(Optional.of(eventService.getAllEvents()),HttpStatus.OK);
     }
 
 
 
-    @GetMapping("/getEventByI/{eventId}")
+    @GetMapping("/getEventById/{eventId}")
     public ResponseEntity getEventByI(@PathVariable int eventId){
         try{
             return new ResponseEntity(Optional.of(eventService.getEventById(eventId)),(HttpStatus.OK));
@@ -74,7 +74,7 @@ public class OrganizerController {
 
 
     //confirm booking
-    @GetMapping("/status/{id}/{status}")
+    @PutMapping("/status/{id}/{status}")
     public ResponseEntity updateStatus(@PathVariable int id, @PathVariable String status){
         try{
             return new ResponseEntity(Optional.of(bookingService.bookingStatus(id,status)),(HttpStatus.OK));

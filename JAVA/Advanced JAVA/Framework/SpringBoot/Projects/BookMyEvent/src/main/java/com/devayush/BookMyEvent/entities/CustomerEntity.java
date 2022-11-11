@@ -12,7 +12,6 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "Customer")
 @Component
 public class CustomerEntity {

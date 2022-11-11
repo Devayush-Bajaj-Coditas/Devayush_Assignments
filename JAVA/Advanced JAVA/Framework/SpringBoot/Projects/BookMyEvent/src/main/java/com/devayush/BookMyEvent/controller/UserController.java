@@ -5,7 +5,9 @@ import com.devayush.BookMyEvent.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
@@ -16,8 +18,8 @@ public class UserController {
     UserService userService;
 
 
-    @PostMapping(name = "/login")
-    public ResponseEntity login(UserEntity user){
+    @GetMapping("/login")
+    public ResponseEntity login(@RequestBody UserEntity user){
         try {
             return new ResponseEntity(Optional.of(userService.findUserByRole(user)), (HttpStatus.OK));
         }

@@ -1,11 +1,14 @@
 package com.devayush.BookMyEvent.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "Event_organizers")
+@Data
 public class EventOrganizerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

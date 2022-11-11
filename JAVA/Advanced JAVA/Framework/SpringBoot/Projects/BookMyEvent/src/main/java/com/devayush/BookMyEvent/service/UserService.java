@@ -17,9 +17,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+    @Autowired
     AdminRepository adminRepository;
+    @Autowired
     CustomerRepository customerRepository;
 
+    @Autowired
     OrganizerRepository organizerRepository;
 
     public ResponseEntity findUserByRole(UserEntity user) {
@@ -32,10 +35,11 @@ public class UserService {
             return new ResponseEntity(customerEntity, HttpStatus.OK);
         }
         else if(user.getRole().equalsIgnoreCase("Organizer")){
-            EventOrganizerEntity organizerEntity = organizerRepository.findByOrganizerEmail(user.getEmail()).orElse(null);
+            EventOrganizerEntity organizerEntity = organizerRepository.findById(user.getUserId()).orElse(null);
             return new ResponseEntity(organizerEntity,HttpStatus.OK);
         }
         else
+            System.out.println("sorry");
             return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 

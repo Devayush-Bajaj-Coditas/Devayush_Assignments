@@ -2,7 +2,6 @@ package com.devayush.BookMyEvent.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.sql.Date;
