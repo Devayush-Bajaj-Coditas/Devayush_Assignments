@@ -30,22 +30,22 @@ public class AppointmentServiceImplementation implements AppointmentService {
 
     @Override
     public ResponseEntity createAppointment(AppointmentDto appointmentDto) {
-
-        DoctorEntity doctor = doctorRepository.getById(appointmentDto.getDoctorId());
-        if (appointmentDto.getAppointmentTime().after(doctor.getAvailableFrom()) && appointmentDto.getAppointmentTime().before(doctor.getAvailableUpto())) {
-            try {
+        try {
+            DoctorEntity doctor = doctorRepository.getById(appointmentDto.getDoctorId());
+            if (appointmentDto.getAppointmentTime().after(doctor.getAvailableFrom()) && appointmentDto.getAppointmentTime().before(doctor.getAvailableUpto())) {
                 appointmentEntity.setAnimalEntity(animalRepository.getById(appointmentDto.getAnimalId()));
                 appointmentEntity.setDoctorEntity(doctorRepository.getById(appointmentDto.getDoctorId()));
                 appointmentEntity.setBookingDate(appointmentDto.getAppointmentDate());
                 appointmentEntity.setBookingTime(appointmentDto.getAppointmentTime());
-                appointmentEntity.setProblem(appointmentEntity.getProblem());
+                appointmentEntity.setProblem(appointmentDto.getProblem());
                 return new ResponseEntity(Optional.of(appointmentRepository.save(appointmentEntity)), HttpStatus.CREATED);
-            } catch (Exception exception) {
-                return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
 
+            } else {
+                return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
             }
-        } else {
-            return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+        } catch (Exception exception) {
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+
         }
     }
 }

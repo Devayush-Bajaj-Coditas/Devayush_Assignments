@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.nio.channels.ScatteringByteChannel;
 import java.util.Optional;
 
 @Service
@@ -23,5 +24,14 @@ public class AnimalServiceImplementation implements AnimalService{
         }catch (Exception exception){
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+   }
+
+   public ResponseEntity getAllPatientsByDoctorID(int id){
+       try {
+           return new ResponseEntity(Optional.of(getAllPatientsByDoctorID(id)), HttpStatus.OK);
+       }
+       catch (Exception exception){
+           return new ResponseEntity(HttpStatus.NOT_FOUND);
+       }
    }
 }
