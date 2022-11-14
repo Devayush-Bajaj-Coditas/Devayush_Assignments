@@ -1,0 +1,2 @@
+package com.devayush.pagingAndSorting.entity;public class UserEntity {
+}
