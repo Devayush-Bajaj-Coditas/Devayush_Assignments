@@ -17,9 +17,8 @@ public class MatchEntity {
     private String matchName;
     private int winnerId;
 
-
-    @OneToMany(mappedBy = "matchEntity", cascade = CascadeType.ALL)
-    private List<PlayerEntity> players = new ArrayList<>();
+    @ManyToMany(mappedBy = "matchEntities", cascade = CascadeType.PERSIST)
+    private List<PlayerEntity> playerEntities = new ArrayList<>();
 
 
 }

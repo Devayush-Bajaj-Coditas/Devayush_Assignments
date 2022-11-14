@@ -19,13 +19,17 @@ public class PlayerEntity {
     private String playerEmail;
     private String password;
     private String playerStatus;
-    private String playerScore;
+    private int playerScore;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "match_id")
-    private MatchEntity matchEntity;
+
 
     @OneToMany(mappedBy = "playerEntity", cascade = CascadeType.ALL)
     private List<LeaderBoardEntity> leaderBoardEntities = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "player_entity_match_entities",
+            joinColumns = @JoinColumn(name = "player_entity"),
+            inverseJoinColumns = @JoinColumn(name = "match_entities"))
+    private List<MatchEntity> matchEntities = new ArrayList<>();
 
 }

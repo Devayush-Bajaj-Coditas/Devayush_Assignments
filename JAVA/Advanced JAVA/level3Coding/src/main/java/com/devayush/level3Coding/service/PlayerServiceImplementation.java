@@ -11,18 +11,19 @@ public class PlayerServiceImplementation implements PlayerService{
     @Autowired
     PlayerRepository playerRepository;
 
-    @Autowired
-    PlayerEntity playerEntity;
 
     @Autowired
     MatchEntity matchEntity;
 
     @Override
     public PlayerEntity registerPlayer(RegisterPlayerDto playerDto) {
+        PlayerEntity playerEntity = new PlayerEntity();
         playerEntity.setPlayerFirstName(playerDto.getPlayerFirstName());
         playerEntity.setPlayerLastName(playerDto.getPlayerLastName());
         playerEntity.setPlayerEmail(playerDto.getPlayerEmail());
         playerEntity.setPassword(playerDto.getPassword());
+        playerEntity.setPlayerStatus("Not playing");
+        playerEntity.setPlayerScore(0);
         return playerRepository.save(playerEntity);
     }
 
