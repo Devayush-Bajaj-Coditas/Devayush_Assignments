@@ -1,5 +1,6 @@
 package com.devayush.level3Coding.controller;
 
+import com.devayush.level3Coding.model.dto.request.GamePlayDto;
 import com.devayush.level3Coding.model.dto.request.StartMatchDto;
 import com.devayush.level3Coding.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,16 @@ public class GameController {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PostMapping("/performAction")
+    public ResponseEntity performAction (@RequestBody GamePlayDto gamePlayDto) {
+        try {
+            return new ResponseEntity(Optional.of(matchService.playerAction(gamePlayDto)), HttpStatus.OK);
+        } catch (Exception exception) {
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        }
+
+    }
+
 
 }
