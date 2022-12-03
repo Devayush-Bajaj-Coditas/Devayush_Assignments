@@ -1,5 +1,6 @@
 package com.devayush.VeterinaryWebsiteManagement.entiry;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -19,11 +20,13 @@ public class AppointmentEntity {
     Time bookingTime;
     String problem;
 
+    @JsonIgnore
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "animal_id")
     private AnimalEntity animalEntity;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "doctor_id")
     private DoctorEntity doctorEntity;

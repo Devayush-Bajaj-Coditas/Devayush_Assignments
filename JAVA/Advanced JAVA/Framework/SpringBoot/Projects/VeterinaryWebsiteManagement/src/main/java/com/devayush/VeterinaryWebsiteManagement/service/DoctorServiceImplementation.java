@@ -13,6 +13,7 @@ import java.util.Optional;
 public class DoctorServiceImplementation implements DoctorService{
     @Autowired
     DoctorRepository doctorRepository;
+
     @Override
     public ResponseEntity registerDoctor(DoctorEntity doctor) {
         try {

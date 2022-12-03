@@ -18,9 +18,9 @@ public class UserEntity {
     String userEmail;
     int swipesDone;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "swiper")
     List<SwipeEntity> swipeEntityList;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "user")
     List<MsgEntity> msgs;
 }

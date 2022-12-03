@@ -5,4 +5,6 @@ import org.springframework.http.ResponseEntity;
 
 public interface DoctorService {
     public ResponseEntity registerDoctor(DoctorEntity doctor);
+
+
 }

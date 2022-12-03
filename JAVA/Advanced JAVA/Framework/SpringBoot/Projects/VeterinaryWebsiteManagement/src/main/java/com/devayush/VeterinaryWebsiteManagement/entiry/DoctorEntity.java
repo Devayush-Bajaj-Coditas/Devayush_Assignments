@@ -1,5 +1,6 @@
 package com.devayush.VeterinaryWebsiteManagement.entiry;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -25,8 +26,13 @@ public class DoctorEntity {
     String doctorCategory;
     String password;
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "doctorEntity", cascade = CascadeType.ALL)
     private List<AppointmentEntity> appointments = new ArrayList<>();
+
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "doctorEntities", cascade = CascadeType.PERSIST)
+    private List<AnimalEntity> animalEntities = new ArrayList<>();
 
 }

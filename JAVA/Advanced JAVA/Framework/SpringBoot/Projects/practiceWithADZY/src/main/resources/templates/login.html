@@ -1,0 +1,43 @@
+<Html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<form>
+    Email <input type="text" name="email" id="email">
+    Password <input type="password" name="password" id="password">
+    <input type="submit" value="Login" id="click">
+</form>
+</body>
+<script>
+
+        $(document).ready(futnction(){
+        $("#click").click(function(e){
+        e.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+
+        var req=new XMLHttpRequest();
+         alert(email);
+        var url="http://localhost:8080/login";
+        req.open("POST",url,true);
+
+        req.setRequestHeader('Content-Type', 'application/json');
+        const jsondata={
+        "email":email,
+        "password":password,
+        }
+        var data=JSON.stringify(jsondata);
+        req.send(data);
+        req.onreadystatechange=()=>{
+        if(req.readyState==4)
+        {
+            alert(req.responseText);
+        }
+        }
+        });
+        });
+
+
+</script>
+</Html>

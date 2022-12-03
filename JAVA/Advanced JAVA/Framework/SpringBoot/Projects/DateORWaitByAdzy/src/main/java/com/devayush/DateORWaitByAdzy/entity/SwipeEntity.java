@@ -1,20 +1,18 @@
 package com.devayush.DateORWaitByAdzy.entity;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+@Data
 @Entity
 public class SwipeEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     int swipeId;
-
-
-    UserEntity  userIdOfSwipee;
-    UserEntity userIdOfSwiper;
-    String response;
-
+    long swipeeId;
+    boolean status;
     @ManyToOne()
-    UserEntity user;
+    UserEntity swiper;
 
 
 
