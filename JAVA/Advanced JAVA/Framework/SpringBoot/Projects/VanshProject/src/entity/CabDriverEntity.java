@@ -1,19 +1,11 @@
 package entity;
 
 public class CabDriverEntity {
-    int locationId;
-    int vehicleNo;
-    String vehicleCategory;
-    String vehicleStatus;
-    long driverContactNumber;
-
-    public CabDriverEntity(int locationId, int vehicleNo, String vehicleCategory, String vehicleStatus, long driverContactNumber) {
-        this.locationId = locationId;
-        this.vehicleNo = vehicleNo;
-        this.vehicleCategory = vehicleCategory;
-        this.vehicleStatus = vehicleStatus;
-        this.driverContactNumber = driverContactNumber;
-    }
+    private int locationId;
+    private String vehicleNo;
+    private String vehicleCategory;
+    private String vehicleStatus;
+    private long driverContactNumber;
 
     public int getLocationId() {
         return locationId;
@@ -23,11 +15,11 @@ public class CabDriverEntity {
         this.locationId = locationId;
     }
 
-    public int getVehicleNo() {
+    public String getVehicleNo() {
         return vehicleNo;
     }
 
-    public void setVehicleNo(int vehicleNo) {
+    public void setVehicleNo(String vehicleNo) {
         this.vehicleNo = vehicleNo;
     }
 
@@ -53,5 +45,14 @@ public class CabDriverEntity {
 
     public void setDriverContactNumber(long driverContactNumber) {
         this.driverContactNumber = driverContactNumber;
+    }
+
+    @Override
+    public String toString() {
+        return locationId +
+                ", '" + vehicleNo + '\'' +
+                ", '" + vehicleCategory + '\'' +
+                ", " + vehicleStatus + '\'' +
+                ", " + driverContactNumber;
     }
 }

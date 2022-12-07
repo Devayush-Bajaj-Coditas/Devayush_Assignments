@@ -14,17 +14,17 @@ public class UserAuthentication {
     UserRepository userRepository;
 
 
-    public UserEntity authenticateUser(LoginDto loginData) {
+    public String authenticateUser(LoginDto loginData) {
         UserEntity user = userRepository.findByEmail(loginData.getEmail()).orElse(null);
 
-            if (user.equals(null)) {
-                throw new EmailNotFoundException();
+        if (user.equals(null)) {
+            throw new EmailNotFoundException();
+        } else {
+            if (loginData.getPassword().equals(user.getPassword())) {
+                return user.getRole();
             } else {
-                if (loginData.getPassword().equals(user.getPassword())) {
-                    return user;
-                } else {
-                    throw new WrongPasswordException();
-                }
+                throw new WrongPasswordException();
             }
+        }
     }
-    }
+}

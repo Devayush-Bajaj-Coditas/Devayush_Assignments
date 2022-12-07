@@ -7,6 +7,8 @@ public interface UserService {
 
     public UserEntity registerNewUser(UserEntity user);
 
-    public UserEntity loginUser(LoginDto loginDto);
+    public String loginUser(LoginDto loginDto);
+
+    public UserEntity getById(int id);
 
 }

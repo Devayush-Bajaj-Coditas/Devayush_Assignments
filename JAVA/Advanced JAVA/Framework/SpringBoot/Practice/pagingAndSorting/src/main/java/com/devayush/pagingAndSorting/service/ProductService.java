@@ -43,4 +43,13 @@ public class ProductService {
     public Page<Product> sortAndPaginateProducts(int page, int pageSize, String field){
         return productRepository.findAll(PageRequest.of(page,pageSize).withSort(Sort.by(Sort.Direction.ASC,field)));
     }
+
+    public List<Product> filterByPrice(int price){
+        return productRepository.sortByPrice(price);
+    }
+
+    public List<Product> filterByPriceAndSort(int price){
+        return productRepository.filterByPriceAndSort(price);
+    }
+
 }
