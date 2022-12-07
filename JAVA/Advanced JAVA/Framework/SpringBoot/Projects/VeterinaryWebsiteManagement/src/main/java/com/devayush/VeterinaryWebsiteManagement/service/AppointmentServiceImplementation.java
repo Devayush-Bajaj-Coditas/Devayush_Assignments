@@ -2,6 +2,7 @@ package com.devayush.VeterinaryWebsiteManagement.service;
 
 import com.devayush.VeterinaryWebsiteManagement.entiry.AppointmentEntity;
 import com.devayush.VeterinaryWebsiteManagement.entiry.DoctorEntity;
+import com.devayush.VeterinaryWebsiteManagement.exception.DoctorNotAvailableException;
 import com.devayush.VeterinaryWebsiteManagement.model.dto.AppointmentDto;
 import com.devayush.VeterinaryWebsiteManagement.repository.AnimalRepository;
 import com.devayush.VeterinaryWebsiteManagement.repository.AppointmentRepository;
@@ -41,11 +42,24 @@ public class AppointmentServiceImplementation implements AppointmentService {
                 return new ResponseEntity(Optional.of(appointmentRepository.save(appointmentEntity)), HttpStatus.CREATED);
 
             } else {
-                return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+                throw new DoctorNotAvailableException("Doctor is not available for the given slot");
             }
         } catch (Exception exception) {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
     }
+
+    @Override
+    public ResponseEntity findAllPatients(long id) {
+        return null;
+    }
+
+/*    @Override
+    public List<DoctorEntity> findAllPatients(long id) {
+        DoctorEntity doctor = doctorRepository.getById(id);
+
+        //return new ResponseEntity(Optional.of(appointmentRepository.getPatients(doctor)),HttpStatus.OK);
+
+    }*/
 }

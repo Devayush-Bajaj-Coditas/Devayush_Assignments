@@ -1,7 +1,9 @@
 package com.devayush.DateORWaitByAdzy.entity;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+@Data
 @Entity
 public class MsgEntity {
     @Id
@@ -11,5 +13,5 @@ public class MsgEntity {
 
 
     @ManyToOne
-    UserEntity userEntity;
+    UserEntity user;
 }

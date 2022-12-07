@@ -4,7 +4,6 @@ import com.devayush.level3Coding.entity.MatchEntity;
 import com.devayush.level3Coding.entity.PlayerEntity;
 import com.devayush.level3Coding.exception.PlayerAlreadyInAGame;
 import com.devayush.level3Coding.model.dto.request.GamePlayDto;
-import com.devayush.level3Coding.model.dto.request.PlayerMoveDto;
 import com.devayush.level3Coding.model.dto.request.StartMatchDto;
 import com.devayush.level3Coding.repository.LeaderboardRepository;
 import com.devayush.level3Coding.repository.MatchRepository;
@@ -19,8 +18,10 @@ public class MatchServiceImplementation implements MatchService {
 
     float playerOneXCordinate = 0;
     float playerOneYCordinate = 0;
-    float playerTwoXCordinate = 0;
-    float playerTwoYCordinate = 0;
+    float playerTwoXCordinate = 10;
+    float playerTwoYCordinate = 10;
+    String winner;
+    String status;
 
     @Autowired
     PlayerRepository playerRepository;
@@ -35,6 +36,8 @@ public class MatchServiceImplementation implements MatchService {
 
     @Autowired
     MatchRepository matchRepository;
+
+
 
     @Override
     public MatchEntity createNewMatch(StartMatchDto startMatchDto){
@@ -59,50 +62,72 @@ public class MatchServiceImplementation implements MatchService {
     }
 
     @Override
-    public String playerAction(GamePlayDto gamePlayDto){
+    public String playerAction(GamePlayDto gamePlayDto) {
         String action = gamePlayDto.getAction();
-        int playerOneHealth = gamePlayDto.getPlayerOneHealth();
-        int playerTwoHealth = gamePlayDto.getPlayerTwoHealth();
-        if(action.equalsIgnoreCase("hit")){
+        if (action.equalsIgnoreCase("hit")) {
             int playerNumber = gamePlayDto.getPlayerNumber();
-            if (playerNumber == 1){
-                if(gamePlayDto.getCoordinatesX() == playerOneXCordinate && gamePlayDto.getCoordinatesY() == playerOneYCordinate){
+            if (playerNumber == 1) {
+                if (gamePlayDto.getCoordinatesX() == playerOneXCordinate && gamePlayDto.getCoordinatesY() == playerOneYCordinate) {
                     gamePlayDto.setPlayerOneHealth(-20);
-                    return "player one got hit" + gamePlayDto.getPlayerOneHealth() + "Health left";
-                }
-                else
-                    return "you have missed the attack";
-            }
-            else if (playerNumber == 2){
-                if(gamePlayDto.getCoordinatesX() == playerTwoXCordinate && gamePlayDto.getCoordinatesY() == playerTwoYCordinate){
+                    status += "player one got hit" + gamePlayDto.getPlayerOneHealth() + "Health left";
+                } else
+                    return status += "you have missed the attack";
+            } else if (playerNumber == 2) {
+                if (gamePlayDto.getCoordinatesX() == playerTwoXCordinate && gamePlayDto.getCoordinatesY() == playerTwoYCordinate) {
                     gamePlayDto.setPlayerTwoHealth(-20);
-                    return "player two got hit" + gamePlayDto.getPlayerOneHealth() + "Health left";
-                }
-                else
-                    return "you have missed the attack";
+                    status += "player two got hit" + gamePlayDto.getPlayerTwoHealth() + "Health left";
+                } else
+                    status += "you have missed the attack";
             }
 
-        }
-
-        else if (action.equalsIgnoreCase("move")){
+        } else if (action.equalsIgnoreCase("move")) {
             int playerNumber = gamePlayDto.getPlayerNumber();
-            if (playerNumber == 1){
-                playerOneXCordinate = gamePlayDto.getCoordinatesX();
-                playerOneYCordinate = gamePlayDto.getCoordinatesY();
-                return "player one moved";
-            }
-            else if (playerNumber == 2){
-                playerTwoXCordinate = gamePlayDto.getCoordinatesX();
-                playerTwoYCordinate = gamePlayDto.getCoordinatesY();
-                return "player two moved";
-            }
-        }
-        if(playerOneHealth <= 0){
-            return  "Player 2 won";
+            if (playerNumber == 1) {
+                if (gamePlayDto.getMoveDirection().equalsIgnoreCase("right")) {
+                    playerOneXCordinate = +1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                } else if (gamePlayDto.getMoveDirection().equalsIgnoreCase("left")) {
+                    playerOneXCordinate = -1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                } else if (gamePlayDto.getMoveDirection().equalsIgnoreCase("up")) {
+                    playerOneYCordinate = +1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                } else if (gamePlayDto.getMoveDirection().equalsIgnoreCase("down")) {
+                    playerOneYCordinate = -1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                }
 
+            } else if (playerNumber == 2) {
+                 if (gamePlayDto.getMoveDirection().equalsIgnoreCase("right")) {
+                    playerTwoXCordinate = +1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                } else if (gamePlayDto.getMoveDirection().equalsIgnoreCase("left")) {
+                    playerTwoXCordinate = -1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                } else if (gamePlayDto.getMoveDirection().equalsIgnoreCase("up")) {
+                    playerTwoYCordinate = +1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                } else if (gamePlayDto.getMoveDirection().equalsIgnoreCase("down")) {
+                    playerTwoYCordinate = -1;
+                    status += "current location of player 1\nX: " + playerOneXCordinate + "\n" + "Y: " + playerOneYCordinate +
+                            "current location of player 2\nX: " + playerTwoXCordinate + "\n" + "Y: " + playerTwoYCordinate;
+                }
+                status += "player two moved";
+            }
         }
-        else
-            return "player 1 won";
+        if (gamePlayDto.getPlayerOneHealth() <= 0) {
+            winner =  "Player 2 won";
+
+        } else if (gamePlayDto.getPlayerTwoHealth() >= 0) {
+            winner = "player 1 won";
+        }
+        return status;
     }
-
 }

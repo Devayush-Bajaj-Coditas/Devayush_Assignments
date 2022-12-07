@@ -1,7 +1,9 @@
 package com.devayush.DateORWaitByAdzy.controller;
 
 
+import com.devayush.DateORWaitByAdzy.entity.SwipeEntity;
 import com.devayush.DateORWaitByAdzy.entity.UserEntity;
+import com.devayush.DateORWaitByAdzy.service.SwipeService;
 import com.devayush.DateORWaitByAdzy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,9 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    SwipeService swipeService;
 
     @PostMapping("/registerUser")
     public ResponseEntity registerUser (@RequestBody UserEntity user){
@@ -42,5 +47,10 @@ public class UserController {
         }catch (Exception exception){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PutMapping("/rightSwipe/{id}")
+    public ResponseEntity swipeRight(long id){
+        return swipeService.swipeRight(id);
     }
 }

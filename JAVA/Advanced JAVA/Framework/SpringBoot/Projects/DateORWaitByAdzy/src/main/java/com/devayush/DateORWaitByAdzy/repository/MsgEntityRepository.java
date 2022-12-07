@@ -1,4 +1,7 @@
-package com.devayush.DateORWaitByAdzy.entity;
+package com.devayush.DateORWaitByAdzy.repository;
 
-public interface MsgEntityRepository extends org.springframework.data.jpa.repository.JpaRepository<com.devayush.DateORWaitByAdzy.entity.MsgEntity, int> {
+import com.devayush.DateORWaitByAdzy.entity.MsgEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MsgEntityRepository extends JpaRepository<MsgEntity, Integer> {
 }

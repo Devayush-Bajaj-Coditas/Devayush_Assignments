@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register user</title>
+</head>
+<body>
+
+<h1>Register User</h1>
+
+<form>
+    First Name : <input type="text" id = "firstName"><br>
+    Last Name : <input type="text" id = "lastName"><br>
+    Email : <input type="text" id = "email"><br>
+    Password : <input type="text" id = "password"><br>
+    Role : <input type="text" id = "role"><br>
+    Mobile Number : <input type="text" id = "mobileNUmber"><br>
+
+
+    <input type="submit" value="Register" id = "registerClick">
+</form>
+</body>
+
+<script>
+    $(document).ready(function(){
+    $(#registerClick).click(function(e){
+    e.preventDefault();
+    var firstName=$("#firstName").var();
+    var lastName=$("#lastName").var();
+    var email=$("#email").var();
+    var password=$("#password").var();
+    var role=$("#role").var();
+    var mobileNUmber=$("#mobileNUmber").var();
+
+
+    var req = new XMLRequest();
+    alert(firstName);
+    var url = "http://localhost:8080/register";
+    req.open("POST",url,true);
+    req.setRequestHeader('Content-Type', 'application/json');
+    const jsondata={
+    "firstName" : firstName,
+    "lastName" : lastName,
+    "email" : email,
+    "password" : password,
+    "role" : role,
+    "mobileNUmber" : mobileNUmber,
+    }
+    var data = JSON.stringify(jsondata);
+    req.send(data);
+
+   req.onreadystatechange=()=>{
+   if(req.readyState==4){
+   alert(req.responseText);
+   }
+   }
+   });
+   });
+
+</script>
+</html>

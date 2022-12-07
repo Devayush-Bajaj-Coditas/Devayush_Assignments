@@ -6,4 +6,6 @@ import org.springframework.http.ResponseEntity;
 public interface AnimalService {
     public ResponseEntity registerAnimal(AnimalEntity animal);
 
+    public ResponseEntity getAllPatientsByDoctorID(int id);
+
 }

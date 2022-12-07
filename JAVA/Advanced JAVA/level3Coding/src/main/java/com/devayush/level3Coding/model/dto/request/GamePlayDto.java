@@ -11,4 +11,5 @@ public class GamePlayDto
     private String action;
     private int playerOneHealth = 100;
     private int playerTwoHealth = 100;
+    private String moveDirection;
 }
