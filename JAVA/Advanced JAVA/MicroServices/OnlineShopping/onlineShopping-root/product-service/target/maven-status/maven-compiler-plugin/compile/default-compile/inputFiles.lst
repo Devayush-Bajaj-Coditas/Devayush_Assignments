@@ -1,0 +1,7 @@
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\ProductServiceApplication.java
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\repository\ProductRepository.java
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\entity\ProductEntity.java
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\model\dto\response\ProductResponseDto.java
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\model\dto\request\ProductRequestDto.java
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\service\ProductService.java
+C:\Users\coditas\Desktop\Devayush_Assignments\JAVA\Advanced JAVA\MicroServices\OnlineShopping\onlineShopping-root\product-service\src\main\java\com\devayush\productservice\controller\ProductController.java

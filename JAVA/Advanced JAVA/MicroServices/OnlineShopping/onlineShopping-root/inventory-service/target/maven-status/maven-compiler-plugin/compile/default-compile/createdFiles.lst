@@ -1,0 +1,5 @@
+com\devayush\inventoryservice\controller\InventoryController.class
+com\devayush\inventoryservice\entity\InventoryEntity.class
+com\devayush\inventoryservice\repository\InventoryRepository.class
+com\devayush\inventoryservice\service\InventoryService.class
+com\devayush\inventoryservice\InventoryServiceApplication.class

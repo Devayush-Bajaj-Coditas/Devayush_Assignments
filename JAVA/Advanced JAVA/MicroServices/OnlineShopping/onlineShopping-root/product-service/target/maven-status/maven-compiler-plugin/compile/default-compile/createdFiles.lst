@@ -1,0 +1,10 @@
+com\devayush\productservice\controller\ProductController.class
+com\devayush\productservice\model\dto\request\ProductRequestDto$ProductRequestDtoBuilder.class
+com\devayush\productservice\entity\ProductEntity$ProductEntityBuilder.class
+com\devayush\productservice\model\dto\request\ProductRequestDto.class
+com\devayush\productservice\repository\ProductRepository.class
+com\devayush\productservice\model\dto\response\ProductResponseDto$ProductResponseDtoBuilder.class
+com\devayush\productservice\service\ProductService.class
+com\devayush\productservice\entity\ProductEntity.class
+com\devayush\productservice\model\dto\response\ProductResponseDto.class
+com\devayush\productservice\ProductServiceApplication.class
